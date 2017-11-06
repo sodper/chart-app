@@ -30,8 +30,8 @@ namespace ChartAppApi.Controllers
             // just read first file if multiple
             var data = await filesReadToProvider.Contents[0].ReadAsStringAsync();
 
-            var parser = new ParsedChartData(data);
-            var chart = parser.GetChart();
+            var service = new ChartService(data);
+            var chart = service.GetChart();
 
             return Request.CreateResponse(HttpStatusCode.OK, chart);
         }

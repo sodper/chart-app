@@ -181,8 +181,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\ChartService.cs" />
     <Compile Include="Logic\IChartData.cs" />
     <Compile Include="Logic\ParsedChartData.cs" />
+    <Compile Include="Logic\RandomChartData.cs" />
     <Compile Include="Models\Chart.cs" />
     <Compile Include="Models\InvalidFileFormatException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
