@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UploadComponent } from './upload/upload.component';
+import { ChartComponent } from './chart/chart.component';
 import { ChartApiService } from './chart-api.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadComponent
+    UploadComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
