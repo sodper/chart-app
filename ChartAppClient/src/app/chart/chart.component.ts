@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartApiService } from '../chart-api.service';
+import { Chart } from '../models/chart.model';
 
 @Component({
   selector: 'app-chart',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChartComponent implements OnInit {
 
-  constructor() { }
+  public data: Chart;
+
+  constructor(private chartApiService: ChartApiService) { }
 
   ngOnInit() {
+    this.data = this.chartApiService.getData();
   }
 
 }

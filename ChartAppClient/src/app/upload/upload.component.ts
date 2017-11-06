@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Http, RequestOptions, Headers, Response } from '@angular/http';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { environment } from "../../environments/environment";
 import { ChartApiService } from '../chart-api.service';
@@ -14,7 +14,7 @@ export class UploadComponent implements OnInit {
   @ViewChild('uploadInput')
   uploadInput: any;
 
-  constructor(private http: Http, private chartApiAService: ChartApiService) { }
+  constructor(private chartApiAService: ChartApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -29,9 +29,12 @@ export class UploadComponent implements OnInit {
 
       this.chartApiAService.uploadDataFile(formData)
         .subscribe(
-          data => console.log(data),
-          error => console.log(error),
-          () => this.uploadInput.nativeElement.value = ''
+        data => {
+          console.log(data);
+          this.router.navigateByUrl('/chart')
+        },
+        error => console.log(error),
+        () => this.uploadInput.nativeElement.value = ''
         )
     }
   }

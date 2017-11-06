@@ -19,4 +19,8 @@ export class ChartApiService {
       })
       .catch(error => Observable.throw(error));
   }
+
+  public getData(): Chart {
+    return this.chartData;
+  }
 }
