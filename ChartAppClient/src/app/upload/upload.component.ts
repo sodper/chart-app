@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http, RequestOptions, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { environment } from "../../environments/environment";
+import { ChartApiService } from '../chart-api.service';
 
 @Component({
   selector: 'app-upload',
@@ -13,7 +14,7 @@ export class UploadComponent implements OnInit {
   @ViewChild('uploadInput')
   uploadInput: any;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http, private chartApiAService: ChartApiService) { }
 
   ngOnInit() {
   }
@@ -25,10 +26,8 @@ export class UploadComponent implements OnInit {
       let file: File = fileList[0];
       let formData: FormData = new FormData();
       formData.append('uploadFile', file, file.name);
-      
-      this.http.post(`${environment.api}/chart`, formData)
-        .map(res => res.json())
-        .catch(error => Observable.throw(error))
+
+      this.chartApiAService.uploadDataFile(formData)
         .subscribe(
           data => console.log(data),
           error => console.log(error),

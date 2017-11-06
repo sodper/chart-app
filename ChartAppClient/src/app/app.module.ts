@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UploadComponent } from './upload/upload.component';
+import { ChartApiService } from './chart-api.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { UploadComponent } from './upload/upload.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [],
+  providers: [ChartApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
