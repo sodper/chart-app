@@ -38,12 +38,12 @@ namespace ChartAppApi.Logic
                     }
                     catch (Exception)
                     {
-                        throw new InvalidFileFormatException(lines[i], i);
+                        throw new InvalidFileFormatException(line: lines[i], lineNumber: i+1);
                     }
                 }
                 else
                 {
-                    throw new InvalidFileFormatException(lines[i], i);
+                    throw new InvalidFileFormatException(line: lines[i], lineNumber: i+1);
                 }
             }
             return _chart;

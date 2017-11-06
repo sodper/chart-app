@@ -5,15 +5,10 @@
         public string Line { get; set; }
         public int LineNumber { get; set; }
 
-        public InvalidFileFormatException(string line, int lineNumber)
+        public InvalidFileFormatException(string line, int lineNumber) : base($"Invalid file format on line {lineNumber}: \"{line}\"")
         {
             Line = line;
             LineNumber = lineNumber;
-        }
-
-        public override string ToString()
-        {
-            return $"Invalid file format on line {LineNumber}: \"{Line}\"";
         }
     }
 }
