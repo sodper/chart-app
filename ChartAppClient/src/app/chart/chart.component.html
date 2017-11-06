@@ -1,3 +1,9 @@
 <h2>Chart Data</h2>
 
-<pre>{{data | json}}</pre>
+<div>
+  <canvas #chartCanvas width="400" height="400"></canvas>
+</div>
+
+<pre>{{chartModel | json}}</pre>
+
+<a routerLink="/upload">&laquo; Upload new data file</a>

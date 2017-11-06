@@ -35,5 +35,15 @@ namespace ChartAppApi.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, chart);
         }
+
+        [HttpGet]
+        [ResponseType(typeof(Chart))]
+        public HttpResponseMessage GetChart()
+        {
+            var service = new ChartService();
+            var chart = service.GetChart();
+
+            return Request.CreateResponse(HttpStatusCode.OK, chart);
+        }
     }
 }

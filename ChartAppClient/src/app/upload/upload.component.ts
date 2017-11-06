@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import { environment } from "../../environments/environment";
@@ -12,7 +12,7 @@ import { ChartApiService } from '../chart-api.service';
 export class UploadComponent implements OnInit {
 
   @ViewChild('uploadInput')
-  uploadInput: any;
+  public uploadInput: ElementRef;
 
   constructor(private chartApiAService: ChartApiService, private router: Router) { }
 
