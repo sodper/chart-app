@@ -1,0 +1,9 @@
+.chart__container {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 1em;
+}
+
+.chart__timer {
+    margin-bottom: 1em;
+}

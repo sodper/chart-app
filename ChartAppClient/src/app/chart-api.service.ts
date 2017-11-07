@@ -25,6 +25,10 @@ export class ChartApiService {
       return Observable.of(this.chartData)
     };
 
+    return this.refreshData();
+  }
+
+  public refreshData(): Observable<ChartModel> {
     return this.http.get(`${environment.api}/chart`)
       .map(res => {
         this.chartData = res.json();

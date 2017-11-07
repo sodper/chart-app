@@ -1,9 +1,11 @@
 <h2>Chart Data</h2>
 
-<div>
+<div class="chart__container">
   <canvas #chartCanvas width="400" height="400"></canvas>
 </div>
 
-<pre>{{chartModel | json}}</pre>
+<div class="chart__timer">
+  New data in: <span>{{ countDown | async }}</span> seconds
+</div>
 
 <a routerLink="/upload">&laquo; Upload new data file</a>
