@@ -14,6 +14,8 @@ export class UploadComponent implements OnInit {
   @ViewChild('uploadInput')
   public uploadInput: ElementRef;
 
+  public errorMessage: string;
+
   constructor(private chartApiAService: ChartApiService, private router: Router) { }
 
   ngOnInit() {
@@ -31,9 +33,13 @@ export class UploadComponent implements OnInit {
         .subscribe(
         data => {
           console.log(data);
-          this.router.navigateByUrl('/chart')
+          this.router.navigateByUrl('chart')
         },
-        error => console.log(error),
+        error => {
+          error = error.json();
+          console.log(error);
+          this.errorMessage = error.exceptionMessage  ;
+        },
         () => this.uploadInput.nativeElement.value = ''
         )
     }

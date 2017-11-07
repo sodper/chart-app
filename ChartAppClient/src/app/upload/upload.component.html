@@ -1,3 +1,5 @@
 <h2>Upload data</h2>
 
 <input #uploadInput type="file" value="upload" (change)="fileChange($event)" accept=".txt" />
+
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
