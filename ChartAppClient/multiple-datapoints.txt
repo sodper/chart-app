@@ -1,2 +1,7 @@
 #A:RED:5 
 #B:BLUE:10
+#C:aliceblue:12
+#D:antiquewhite:8
+#E:aquamarine:9
+#F:orange:15
+#G:chocolate:12
